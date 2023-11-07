@@ -22,7 +22,10 @@ for root, folders, files in list_of_files:
 		Hash_file = hashlib.md5(open(file_path, 'rb').read()).hexdigest()
 
 		if Hash_file not in unique_files:
+			
 			unique_files[Hash_file] = file_path
+			
 		else:
+			
 			os.remove(file_path)
 			print(f"{file_path} has been deleted")
